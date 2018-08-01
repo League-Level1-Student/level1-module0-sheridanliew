@@ -56,9 +56,9 @@ public class PhotoQuiz {
 		// 12. pack the quiz window
 		quizWindow.pack();
 		// 13. ask another question
-		JOptionPane.showInputDialog("What is the face doing?");
+		String answer2 = JOptionPane.showInputDialog("What is the face doing?");
 		// 14. check answer, say if correct or incorrect, etc.
-		if (answer.equals("smiling")) {
+		if (answer2.equals("crying")) {
 			JOptionPane.showMessageDialog(null, "CORRECT!!!");
 		} else {
 			JOptionPane.showMessageDialog(null, "INCORRECT. The answer was 'crying'.");

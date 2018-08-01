@@ -67,12 +67,12 @@ public class DrumKit implements MouseListener {
 		panel.setLayout(new GridLayout());
 		frame.pack();
 		cymbalLabelWithImage.addMouseListener(this);
-		String bass = ("bass.jpg");
-		bassLabelWithImage = createLabelImage(bass);
-		panel.add(bassLabelWithImage);
-		panel.setLayout(new GridLayout());
-		frame.pack();
-		bassLabelWithImage.addMouseListener(this);
+		// String bass = ("bass.jpg");
+		// bassLabelWithImage = createLabelImage(bass);
+		// panel.add(bassLabelWithImage);
+		// panel.setLayout(new GridLayout());
+		// frame.pack();
+		// bassLabelWithImage.addMouseListener(this);
 	}
 
 	public void mouseClicked(MouseEvent e) {
@@ -86,8 +86,10 @@ public class DrumKit implements MouseListener {
 		// find it on freesound.org. To download it, log in as
 		// leagueofamazing/code4life.
 		// 16. If they clicked on the drumImage...
-		if(e.getSource()==snareLabelWithImage) {
+		if (e.getSource() == snareLabelWithImage) {
 			playSound("drum.wav");
+		} else if (e.getSource() == cymbalLabelWithImage) {
+			playSound("cymbal.wav");
 		}
 		// 17. ...use the playSound method to play a drum sound. Test to see if it works
 
