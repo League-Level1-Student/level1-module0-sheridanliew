@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.util.Random;
 
 import org.jointheleague.graphical.robot.Robot;
@@ -16,7 +17,7 @@ public class Houses {
 		rbt.moveTo(100, 500);
 		// 2. Draw a flat-topped house of height 100 with grass after it (see picture).
 		rbt.penDown();
-		rbt.setRandomPenColor();
+		rbt.setPenColor(Color.BLACK);
 		rbt.move(100);
 		rbt.turn(90);
 		rbt.move(30);
@@ -35,18 +36,22 @@ public class Houses {
 
 		// 4. Change the method to take (int height) as a parameter. Draw 9 houses of
 		// different heights
-		if (random.equals(small)) {
-			drawPointyRoof(60);
-		} else if (random.equals(medium)) {
-			drawFlatRoof(120);
-		} else {
-			drawFlatRoof(250);
-		}
 
 		// 5. Make the method take a String instead of an int.
 		// “small” 60
 		// “medium” 120
 		// “large” 250
+
+		for (int i = 0; i < 9; i++) {
+			int r = random.nextInt(3);
+			if (r == 0) {
+				drawPointyRoof(60, Color.BLUE);
+			} else if (r == 1) {
+				drawFlatRoof(120, Color.BLACK);
+			} else {
+				drawFlatRoof(250, Color.GRAY);
+			}
+		}
 
 		// 6. Make the method take a color as well as a height. The houses are drawn in
 		// that color.
@@ -62,8 +67,8 @@ public class Houses {
 
 	}
 
-	public static void drawFlatRoof(int height) {
-		rbt.setRandomPenColor();
+	public static void drawFlatRoof(int height, Color color) {
+		rbt.setPenColor(color);
 		rbt.move(height);
 		rbt.turn(90);
 		rbt.move(30);
@@ -75,8 +80,8 @@ public class Houses {
 		rbt.turn(270);
 	}
 
-	public static void drawPointyRoof(int height) {
-		rbt.setRandomPenColor();
+	public static void drawPointyRoof(int height, Color color) {
+		rbt.setPenColor(color);
 		rbt.move(height);
 		rbt.turn(45);
 		rbt.move(20);
